@@ -1,0 +1,297 @@
+/* Box sizing rules */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Remove default margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+
+/* Set core root defaults */
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+
+/* Set core body defaults */
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+
+/* A elements that don't have a class get default styles */
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+
+/* Make images easier to work with */
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* Inherit fonts for inputs and buttons */
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* Remove all animations and transitions for people that prefer not to see them */
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+// Код после обнуления стилей
+.wrapper {
+    max-width: 1350px;
+    margin: 0 auto;
+    .content {
+        width: 100%;
+        margin: 50px 0px;
+        .slick {
+            width: 95%;
+            margin: 0 auto;
+        }
+        .cart {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            max-width: 300px;
+            width: 100%;
+            height: 600px;
+            padding: 20px 10px;
+            border: 4px solid gray;
+            .cart__num {
+                text-align: right;
+                width: 100%;
+                margin-bottom: 10px;
+                p {
+                    font-family: "Roboto", sans-serif;
+                    font-size: 10px;
+                }
+            }
+            .cart__img {
+                display: flex;
+                justify-content: center;
+                max-width: 150px;
+                max-height: 200px;
+                margin: 0 auto;
+                img {
+                    width: 100%;
+                    transition: 1s;
+                }
+                img:hover {
+                    opacity: 0.75;
+                }
+            }
+            .cart__stock {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                align-items: center;
+                height: 84px;
+                .cart__stock-discount {
+                    width: 50px;
+                    height: 25px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;
+                    background: #ff4949;
+                    margin-right: 5px;
+                    color: #fff;
+                    font-family: "Roboto", sans-serif;
+                }
+                .cart__stock-hit {
+                    width: 50px;
+                    height: 25px;
+                    display: flex;
+                    justify-content: center;
+                    color: #fff;
+                    align-items: center;
+                    border-radius: 5px;
+                    background: #ff4949;
+                    margin-right: 5px;
+                    font-family: "Roboto", sans-serif;
+                }
+                .cart__stock-bestP {
+                    width: 150px;
+                    color: #fff;
+                    height: 25px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;
+                    background: green;
+                    margin-right: 5px;
+                    font-family: "Roboto", sans-serif;
+                }
+            }
+            .cart__title {
+                max-width: 330px;
+                width: 100%;
+                height: 50px;
+                p {
+                    font-family: "Roboto", sans-serif;
+                    -webkit-line-clamp: 2;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+            }
+            .cart__rewies {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                margin: 10px 0px;
+                .cart__rewies-star {
+                    display: flex;
+                    margin-right: 10px;
+                    transition: 0.5s;
+                    img {
+                        width: 14px;
+                        height: 14px;
+                    }
+                    img:hover {
+                        opacity: 0.75;
+                    }
+                }
+                .cart__rewies-count {
+                    p {
+                        font-family: "Roboto", sans-serif;
+                        transition: 0.5s;
+                    }
+                    p:hover {
+                        opacity: 0.75;
+                    }
+                }
+            }
+            .cart__price {
+                width: 100%;
+                margin-bottom: 30px;
+                .cart__price-title {
+                    font-family: "Roboto", sans-serif;
+                    width: 100%;
+                    font-size: 12px;
+                }
+                span {
+                    display: flex;
+                    align-items: center;
+                    .price {
+                        color: #ff4949;
+                        font-size: 26px;
+                        margin-right: 10px;
+                    }
+                    .cashback {
+                        background: #d7a86e;
+                        padding: 3px;
+                        border-radius: 3px;
+                    }
+                }
+                .price__tax {
+                    s {
+                        font-family: "Roboto", sans-serif;
+                        font-size: 20px;
+                        color: gray;
+                    }
+                }
+            }
+            .cart__buttons {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+                .btn__buy {
+                    padding: 0px 40px;
+                    background: green;
+                    transition: 0.5s;
+                    text-decoration: none;
+                    color: #fff;
+                    font-size: 30px;
+                    border-radius: 50px;
+                    font-family: "Roboto", sans-serif;
+                }
+                .btn__buy:hover {
+                    opacity: 0.75;
+                }
+                .btn__heart {
+                    width: 20px;
+                    height: 20px;
+                    transition: 0.5s;
+                    img {
+                        width: 100%;
+                    }
+                    img:hover {
+                        opacity: 0.75;
+                    }
+                }
+                .btn__scales {
+                    width: 20px;
+                    height: 20px;
+                    transition: 0.5s;
+                    img {
+                        width: 100%;
+                    }
+                    img:hover {
+                        opacity: 0.75;
+                    }
+                }
+            }
+        }
+    }
+}
